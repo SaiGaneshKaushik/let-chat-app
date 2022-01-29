@@ -10,7 +10,7 @@ var firebaseConfig = {
   
   firebase.initializeApp(firebaseConfig);
 
-  user_name = localStorage.getItem("username");
+  user_name = localStorage.getItem("userName");
   console.log(user_name);
 
   document.getElementById("user_name").innerHTML = "Welcome " + user_name + " ! ";
@@ -42,5 +42,11 @@ function redirectToRoomName(name)
 {
       console.log(name);
       localStorage.setItem("room_name", name);
+      window.location = "kwitter_page.html";
+}
+function logout()
+{
+      localStorage.removeItem("userName");
+      localStorage.removeItem("room_name");
       window.location = "kwitter_page.html";
 }
